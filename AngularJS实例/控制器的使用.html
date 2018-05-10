@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>控制器的使用</title>
+		<script src="js/angular.min.js"></script>
+	</head>
+	<body>
+		<!--声明为angularJs应用，声明使用控制器-->
+		<div ng-app="myApp" ng-controller="nameControl">
+		你的名字：<input type="text" ng-model="name"/>
+		</div>
+		<script>
+			//定义当前的应用
+			var app = angular.module("myApp",[]);
+			//定义控制器
+			app.controller("nameControl",function($scope){
+				$scope.name = "123";
+			});
+			
+		</script>		
+		
+		
+	</body>
+</html>

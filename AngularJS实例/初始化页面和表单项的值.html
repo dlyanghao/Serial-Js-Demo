@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>自定义moduel</title>
+		<script src="js/angular.min.js"></script>
+	</head>
+	<!--
+		方法一：使用ng-init设定初始值，可以是字符串和对象或者数组等
+		使用表达式：{{  }}展示
+		使用ng-model展示,把输入域中的值展示到页面，将输入域的值与 AngularJS 创建的变量绑定
+		使用ng-bind ng-bind 指令把应用程序数据绑定到 HTML 视图展示
+	-->
+	<body>
+		<form ng-app="" ng-init="str='测试数据的初始化';person = {username:'yanghao',password:'123456',email:'123456@qq.com'}">
+			<p>{{str}}</p>
+			<div>
+				username：<input type="text" ng-model="person.password"/>				
+			</div>
+			<div>
+				password：<input type="text" ng-model="person.username"/>
+			</div>
+			<div>
+				我的联系方式：<span ng-bind="person.email">
+			</div>
+		</form>
+	</body>
+</html>

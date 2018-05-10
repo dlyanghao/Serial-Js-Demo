@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/angular.min.js"></script>
+	</head>
+	<!--HTML5 允许扩展的（自制的）属性，以 data- 开头,AngularJS 属性以 ng- 开头，但是您可以使用 data-ng- 来让网页对 HTML5 有效-->
+	<body>
+		<div data-ng-app="">
+		     <p>名字 : <input type="text" data-ng-model="name"></p>
+		     <h1>Hello {{name}}</h1>
+			 <p>我的第一个表达式演示5+5=</p>
+			 <h2>{{5+5}}</h2>
+		</div>
+	</body>
+</html>

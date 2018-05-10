@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>使用$http来获取远程数据</title>
+		<script src="js/angular.min.js"></script>
+	</head>
+	<script>
+		var app = angular.module("myApp",[]);
+		app.controller("remoteControl",function($scope,$http){
+			
+			$http.get("json/data.json").success(function(response){
+				$scope.persons = response;
+			});
+			
+		});
+		
+	</script>
+	<body>
+		
+		<div ng-app="myApp" ng-controller="remoteControl">
+			<ul>
+				<li ng-repeat="x in persons">
+					用户名：{{x.username}}   用户昵称：{{x.nickname}}
+				</li>
+			</ul>
+			
+		</div>
+	</body>
+</html>
