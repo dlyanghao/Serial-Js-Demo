@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script type="text/javascript">
+			
+			window.onload = function(){
+				
+				var all =  document.getElementById("all");
+				var items = document.getElementsByClassName("itemSelect");
+				all.onchange = function(){
+					
+					var flag = all.checked;
+					
+					for(var i=0; i<items.length; i++){
+						
+						items[i].checked = flag;
+					}
+					
+				}
+				
+			}
+			
+			
+		</script>
+	</head>
+	<body>
+		<table id="tab1" border="1" width="800" height="500px" align="center" >
+			<tr>
+				<td colspan="5"><input type="button" value="添加"/> <input type="button" value="删除"></td>
+			</tr>
+			<tr>
+				<th><input id="all" type="checkbox"></th>
+				<th>分类ID</th>
+				<th>分类名称</th>
+				<th>分类描述</th>
+				<th>操作</th>
+			</tr>
+			<tr>
+				<td><input type="checkbox" class="itemSelect" ></td>
+				<td>1</td>
+				<td>XXXX</td>
+				<td>XXXX</td>
+				<td><a href="">修改</a>|<a href="">删除</a></td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" class="itemSelect"></td>
+				<td>2</td>
+				<td>XXXX</td>
+				<td>XXXX</td>
+				<td><a href="">修改</a>|<a href="">删除</a></td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" class="itemSelect"></td>
+				<td>3</td>
+				<td>XXXX</td>
+				<td>XXXX</td>
+				<td><a href="">修改</a>|<a href="">删除</a></td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" class="itemSelect"></td>
+				<td>4</td>
+				<td>XXXX</td>
+				<td>XXXX</td>
+				<td><a href="">修改</a>|<a href="">删除</a></td>
+			</tr>
+		</table>
+	</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-3.2.1.js">
+			
+		</script>
+		<script type="text/javascript">
+			
+			$(function(){
+				
+				$("#bt1").click(function(){
+					var name = $("#name").val();
+					var tele = $("#tel").val();
+					var index = $("tr").length;
+					var $record = $("<tr></tr>");
+					$record.html("<td>"+index+"</td>"+"<td>"+name+"</td>"+"<td>"+tele+"</td>");
+					$delete = "<input class='btn' type='button' value='删除' />";
+					$record.append("<td>"+$delete+"</td>");
+					$("#table").append($record);
+					//注册删除事件
+					$(".btn:last").click(function(){
+						$(this).parent().parent().remove();
+						autoIndex();
+					});
+				});
+				//遍历的元素也是js对象即dom对象
+				function autoIndex(){
+
+					var len = $("table tr").length-1;
+					$("table tr:gt(0)").each(function(number,element){
+						$(element).children().first().html(number+1);
+					
+					});
+				}
+			});
+				
+			
+		</script>
+	</head>
+	<body>
+		姓名：<input type="text" id="name"> 
+		电话：<input type="text" id="tel">
+		<input type="button" id="bt1" value="添加">
+		
+		<hr />
+		<table border="1px" width="400px" id="table" >
+			<tr>
+				<td>序号</td>
+				<td>姓名</td>
+				<td>电话</td>
+				<td>删除</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>黑妞</td>
+				<td>13800138000</td>
+				<td><input type="button" class="btn" value="删除"/></td>
+			</tr>
+		</table>
+	</body>
+</html>

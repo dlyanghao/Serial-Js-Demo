@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>作业5：表单校验使用Validation插件</title>
+		<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+		<script type="text/javascript" src="js/jquery.validate.js"></script>		
+		<script type="text/javascript" src="js/messages_zh.js"></script>
+
+		<script type="text/javascript"> 
+			$(function(){
+				//添加校验器（新增自定义校验规则）
+				/**
+				 * value是用户输入的值
+				 * element是当前校验的元素
+				 * parms是参数（就是校验器的设定的参数值）
+				 */
+				$.validator.addMethod("onechar",function(value,element,parms){
+					
+					if(value.length==1)
+					{
+						if(value>=parms[0]&&value<=parms[1])
+						{
+							return true;
+						}
+						else
+						{
+							return false;
+						}
+					}
+					else
+					{
+						return false;
+					}
+					
+					
+				},"不正确");
+				
+				$("#formid").validate({
+					
+					rules:{
+						username:{
+							required:true
+						},
+						
+						password :{							
+							rangelength:[6,10]					
+						},
+						
+						repassword:{			
+							rangelength:[6,10]
+						},
+						
+						height:{
+							min:180
+						},
+						
+						age:{
+							range:[18,56]
+						},
+						
+						email:{
+							email:true
+						},
+						
+						personal:{
+							onechar:["a","z"]
+						}
+					},
+					
+					messages:{
+						username:{
+							required:"不能输入空的用户名",
+						},
+						
+						password :{
+							rangelength:"请输入8到15位密码"					
+						},
+						
+						repassword:{			
+							rangelength:"请输入8到15位密码"
+						},
+						
+						height:{
+							min:"你的身高不到180"
+						},
+						
+						age:{
+							range:"请输入18到56岁的数字"
+						},
+						
+						email:{
+							email:"请输入有效的Email地址"
+						}
+					}	
+				});
+				
+				
+			});
+		</script>
+	</head>
+	<body>
+		<form id="formid" action="#">
+			
+			<!--不能为空-->
+			用户名：<input type="text" name="username"/> <br/>
+			
+			<!--长度在6-10个字符之间-->
+			密码：<input type="text" name="password"/> <br />
+			
+			重复密码：<input type="text" name="repassword"/> <br />
+			
+			<!--大于180cm-->
+			身高：<input type="text" name="height"/> <br />
+			
+			<!--在18岁到56岁之间-->
+			年龄：<input type="text" name="age"/> <br />
+			
+			邮箱：<input type="text" name="email"/> <br />
+			
+			自定义校验(单个字符)：<input type="text" name="personal"/> <br />
+			<input type="submit" value="提交"/>
+		</form>
+	</body>
+</html>

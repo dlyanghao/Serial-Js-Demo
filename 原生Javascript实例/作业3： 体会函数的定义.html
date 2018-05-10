@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script type="text/javascript">
+			
+			function add(){
+				var var1 = document.getElementById("var1");
+				var var2 = document.getElementById("var2");
+				
+				var result = parseInt(var1.value)+parseInt(var2.value);
+				alert(result);
+			}
+			
+			function sub(){
+				var var1 = document.getElementById("var1");
+				var var2 = document.getElementById("var2");
+				
+				var result = parseInt(var1.value)-parseInt(var2.value);
+				alert(result);
+			}
+			
+			window.onload = function(){
+				
+				var btn1 = document.getElementById("btn1");
+				var btn2 = document.getElementById("btn2");
+				
+				var var1 = document.getElementById("var1");
+				var var2 = document.getElementById("var2");
+				
+				btn1.onclick = function(){
+					var result = parseInt(var1.value)+parseInt(var2.value);
+					alert(result);
+				}
+				
+				btn2.onclick = function(){
+					var result = parseInt(var1.value)-parseInt(var2.value);
+					alert(result);
+				}
+			
+			}
+			
+			
+			
+		</script>
+	</head>
+	<body>
+	数1：<input type="text" id="var1" />
+	数2：<input type="text" id="var2" />
+	<input type="button" value="普通函数--加法" onclick="add();"/>
+	<input type="button" value="普通函数--减法" onclick="sub();"/>
+	<input id="btn1" type="button" value="匿名函数--加法" />
+	<input id="btn2" type="button" value="匿名函数--减法" />
+	</body>
+</html>

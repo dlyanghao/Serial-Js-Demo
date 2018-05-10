@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>倒序输出</title>
+		<script type="text/javascript">
+			window.onload = function(){
+				
+				var dom = document.getElementById("txt");
+				var btn = document.getElementById("btn");
+				
+				btn.onclick = function(){
+					
+					var str = dom.value;
+					var len = str.length;
+					var result = "";
+					
+					for(var i=len; i>0 ;i--){
+						result+=str.charAt(i-1);
+					}
+					dom.value = result;
+				}
+	
+			}
+			
+			
+		</script>
+		
+		
+	</head>
+	<body>
+		<input type="text" id="txt" value="hello i am  stone"/>
+		<input type="button" id="btn" value="数组反转" />
+		
+			
+		
+	</body>
+</html>

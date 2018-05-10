@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script type="text/javascript">
+			
+			window.onload = function(){
+				
+				//获取DOM对象（是个数组）
+				var trs = document.getElementsByTagName("tr");
+				//给空白的表格上色
+				for (var i=1;i<trs.length ;i++) {
+					
+					if(i%2==0)
+					{
+						trs[i].bgColor = "red";
+					}
+					else
+					{
+						trs[i].bgColor = "yellow"
+					}
+				}
+				
+				//设置表格的移入移出监听事件
+				
+				var color;
+				for(var i=1; i<trs.length; i++){
+					
+					//移入
+					trs[i].onmouseenter = function(){
+						color = this.bgColor;
+						this.bgColor = "green";
+					}
+
+					//移出
+					trs[i].onmouseleave = function(){
+						this.bgColor = color;
+					}
+					
+				}
+				
+				
+						
+			}
+	
+		</script>
+	</head>
+	<body>
+		<table id="tab1" border="1" width="800px" height="400px" align="center" >
+			<tr>
+				<th>分类ID</th>
+				<th>分类名称</th>
+				<th>分类描述</th>
+				<th>操作</th>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>XXXX</td>
+				<td>XXXX</td>
+				<td><a href="#">修改</a>|<a href="#">删除</a></td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>XXXX</td>
+				<td>XXXX</td>
+				<td><a href="#">修改</a>|<a href="#">删除</a></td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>XXXX</td>
+				<td>XXXX</td>
+				<td><a href="">修改</a>|<a href="">删除</a></td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td>XXXX</td>
+				<td>XXXX</td>
+				<td><a href="">修改</a>|<a href="">删除</a></td>
+			</tr>
+		</table>
+	</body>
+</html>

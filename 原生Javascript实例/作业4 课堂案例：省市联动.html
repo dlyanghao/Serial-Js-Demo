@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			window.onload = function(){
+			var arr = [
+			["长沙","株洲","湘潭","湘西自治州"],
+			["深圳市","广州市","惠州市","中山市"],
+			["武汉市","宜昌市","黄冈市","鄂州市"],
+			["南昌市","上饶市","赣州市","吉安市"]
+			];
+			
+
+			var dom = document.getElementsByName("pro");
+			var dom2 = document.getElementsByName("city");
+			
+			dom[0].onchange = function(){
+				
+				var index = dom[0].value;
+				
+				function selected(){
+					dom2[0].innerHTML = "<option >-请选择-</opion>";
+					for(var i=0; i<arr[index].length; i++)
+					{
+						var note = document.createElement("option");
+						note.innerHTML = arr[index][i];
+						dom2[0].appendChild(note);
+					}
+				}
+				
+				if(index==0)
+				{
+					selected();
+				}
+				else if(index==1)
+				{
+					selected();
+				}
+				else if(index==2)
+				{
+					selected();
+				}
+				else
+				{
+					selected();
+				}
+			}
+			
+			
+			
+			}
+			
+			
+			
+			
+	
+		</script>
+	</head>
+	<body>
+		<form action="#" method="get">
+			<input type="hidden" name="id" value="007"/>
+			姓名:<input name="username"/><br>
+			密码:<input type="password" name="password"><br>
+			籍贯:
+				<select name="pro">
+					<option >-请选择-</opion> 	
+					<option value="0">湖南省</option>
+					<option value="1">广东省</option>
+					<option value="2">湖北省</option>
+					<option value="3">江西省</option>
+				</select>
+				<select name="city" id="cityId">
+					<option >-请选择-</option> 	
+				</select>
+			<br>
+			<br>
+			<input type="submit" value="注册"/>
+			<input type="reset" />
+		</form>
+	</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>左右选择</title>
+		<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+		<script type="text/javascript">
+			
+			$(function(){
+				$("#right").click(function(){
+				$("#one option:checked").each(function(number,element){
+					//console.log(number);
+					$("#two").append(element);
+				});
+				
+			});
+			});
+			
+			
+			
+			
+		</script>
+	</head>
+	<body>
+		<div>
+			<span>
+				<select multiple="multiple" id="one">
+					<option disabled="true">请选择</option>
+					<option>可乐：6元</option>
+					<option>薯条：8元</option>
+					<option>奥尔良烤翅：12元</option>
+					<option>金牌童子鸡：35元</option>
+					<option>牛奶：5元</option>
+					<option>老北京鸡肉卷：15元</option>
+					<option>新圣代雪糕：12元</option>
+				</select>
+			</span>
+			<span>
+				<input id="left" type="button" value="<"/>
+				<input id="right" type="button" value=">"/>
+			</span>
+			<span>
+				<select multiple="multiple" id="two">
+					<option disabled="true">购物车</option>
+				</select>
+			</span>
+		</div>
+	</body>
+</html>

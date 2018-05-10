@@ -1,0 +1,55 @@
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>打印99乘法表</title>
+		
+		<script type="text/javascript">
+			
+			//控制台显示
+			function test1(){
+				
+				
+				for(var i=1;i<10;i++)
+				{
+					var str = "";
+					for(var j=1;j<=i;j++)
+					{
+						str += i+"*"+j+"="+i*j+" ";
+					}
+					console.log(str);
+				}	
+			}
+			
+			//页面显示
+			function test2(){
+				
+				var dom = document.getElementById("show");
+				dom.innerHTML="";
+				for(var i=1;i<10;i++)
+				{
+					var oneNode = document.createElement("div");
+					var str = "";
+					for(var j=1;j<=i;j++)
+					{
+						str += i+"*"+j+"="+i*j+" ";
+					}
+					oneNode.innerHTML = str;
+					dom.appendChild(oneNode);
+				}	
+				
+				
+			}
+			
+			
+			
+		</script>
+	</head>
+	
+	<body>
+	<input type="button" id="bt1" onclick="test1();" value="控制台显示" />
+	<input type="button" id="bt1" onclick="test2();" value="页面显示" />
+	
+	<div id="show">
+	</div>
+	</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>比较"=="和"==="</title>
+		
+		<script type="text/javascript">
+			
+			window.onload = function(){
+				
+				var btn1 = document.getElementById("one");
+				var btn2 = document.getElementById("two");
+				var btn3 = document.getElementById("three");
+				
+				btn1.onclick =function(){
+					alert(3.14==3.14);
+					alert(3.14===3.14);
+				}
+				btn2.onclick =function(){
+					alert(3.14==3.15);
+					alert(3.14===3.15);
+				}
+				btn3.onclick =function(){
+					alert(3.14=="3.14");
+					alert(3.14==="3.14");
+				}	
+			}
+			
+			
+		</script>
+	</head>
+	<body>
+		<h1>比较"=="和"==="</h1>
+		<div id="one">第一组：3.14 和 3.14<input type="button" value="比较"/></div>
+		<div id="two">第二组：3.14 和 3.15<input type="button" value="比较"/></div>
+		<div id="three">第三组：3.14  和 "3.14"<input type="button" value="比较"/></div>
+	</body>
+</html>

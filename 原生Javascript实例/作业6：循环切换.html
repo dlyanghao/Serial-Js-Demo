@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>循环切换</title>
+		
+		<script type="text/javascript">
+			
+			var index=0;
+			var imageArray = [
+			"img/first_slide1.jpg",
+			"img/first_slide2.jpg",
+			"img/first_slide3.jpg",
+			"img/first_slide4.jpg",
+			"img/first_slide5.jpg",
+			"img/first_slide6.jpg",
+			"img/first_slide7.jpg",
+			"img/first_slide8.jpg"];
+			function change(){
+				var dom = document.getElementById("image");
+				dom.src = imageArray[index%8];
+				index++;
+			}
+			
+			
+		</script>
+	</head>
+	<body>
+		
+		<h1 id="title">我是图片一</h1>
+		<img id="image" src="img/first_slide1.jpg" width="600" height="500"/>
+		<hr />
+		<input id="btn" type="button" value="改变" onclick="change()"/>
+	</body>
+</html>

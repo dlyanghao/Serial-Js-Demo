@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-3.2.1.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				
+				$("tr:gt(0):even").css("background-color","yellow");
+				$("tr:gt(0):odd").css("background-color","red");
+				
+				
+				var oldColor;
+				$("tr:gt(0)").mouseenter(function(){
+					
+					oldColor = $(this).css("background-color");
+					$(this).css("background-color","green");
+
+				});
+				$("tr:gt(0)").mouseleave(function(){
+					
+					$(this).css("background-color",oldColor);
+
+				});
+				
+
+			});
+
+		</script>
+	
+	</head>
+	<body>
+		<table id="tab1" border="1" width="800px" height="400px" align="center" >
+			<tr>
+				<th>分类ID</th>
+				<th>分类名称</th>
+				<th>分类描述</th>
+				<th>操作</th>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>数码产品</td>
+				<td>数码产品类商品</td>
+				<td><a href="#">修改</a>|<a href="#">删除</a></td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>游戏产品</td>
+				<td>游戏产品类商品</td>
+				<td><a href="#">修改</a>|<a href="#">删除</a></td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>办公产品</td>
+				<td>办公产品类商品</td>
+				<td><a href="">修改</a>|<a href="">删除</a></td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td>装饰产品</td>
+				<td>装饰产品类商品</td>
+				<td><a href="">修改</a>|<a href="">删除</a></td>
+			</tr>
+		</table>
+	</body>
+</html>

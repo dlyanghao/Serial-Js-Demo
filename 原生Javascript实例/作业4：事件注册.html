@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>事件注册</title>
+		
+		<script type="text/javascript">
+			
+			window.onload = function(){
+				
+				var photo = document.getElementById("image");
+				photo.onmouseenter = function(){
+					console.log("鼠标移入");
+				}
+				photo.onmouseleave = function(){
+					console.log("鼠标离开");
+				}
+				photo.onclick = function(){
+					console.log("鼠标点击");
+				}
+			}
+			
+		</script>
+	</head>
+	<body>
+		<img id="image" src="img/first_slide1.jpg"/>
+	</body>
+</html>

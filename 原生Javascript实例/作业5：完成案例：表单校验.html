@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>表单校验</title>
+		<script type="text/javascript">
+			
+			window.onload = function(){
+				
+				var name = document.getElementsByName("name");
+				var psd = document.getElementsByName("password");
+				var rePsd = document.getElementsByName("rePassword");
+				
+				var btn = document.getElementsByName("btn");
+				
+				btn[0].onclick = function(){
+					
+					//正则的使用
+					var rex = new RegExp("[a-z]");
+					var result = rex.test("a");
+					alert(result);
+					
+					var usrName = name[0].value;
+					var userPassword = psd[0].value;
+					var userRePassword = rePsd[0].value;
+					
+					if(userPassword!=userRePassword)
+					{
+						alert("你第二次输入的密码与第一次输入不一致，请重新输入");
+					}
+	
+				}
+				
+			}
+			
+			
+			
+		</script>
+	</head>
+	<body>
+		<form onsubmit="" action="#">
+			<div>
+				<label for="name">姓名: </label><input type="text" name="name"/>
+			</div>
+			<div>
+				<label for="name">密码: </label><input type="password" name="password"/>
+			</div>
+			<div>
+				<label for="rePassword">重复密码: </label><input type="password" name="rePassword"/>
+			</div>
+			<input type="submit" name="btn" value="提交"/>
+		</form>
+	</body>
+</html>

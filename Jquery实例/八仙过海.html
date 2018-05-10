@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+		<style type="text/css">
+			.red{
+				color: red;
+			}
+		</style>
+		<script type="text/javascript">
+			
+			
+			
+			$(function(){
+				
+					//get()获取DOM对象，eq()获取jQuery对象
+					//$(".red").eq(2).css("color","blue");
+					//$("h1").eq(3).css("color","blue");
+					//$("body h1").eq(3).css("color","blue");
+					
+					//直接兄弟选择器（同级）
+					//$("h1+h1").eq(2).css("color","blue");
+					//兄弟选择器（同级）
+					//$("h1~h1").eq(2).css("color","blue");
+					//内容选择器
+					//$("h1:contains('红色3')").eq(1).css("color","blue");
+			});
+		
+			
+			
+			
+		</script>
+		
+	</head>
+	<body>
+		<h1>使用尽可能多的选择器方式，把"红色3"的文字颜色变成蓝色，具体修改方式见注释的代码</h1>
+		<h1 class="red">红色1</h1>
+		<h1 class="red">红色2</h1>
+		<h1 class="red">红色3</h1>
+		<h1 class="red">红色4</h1>
+		<h1 class="red">红色5</h1>
+		
+		<input type="button" id="bt1" value="换色" />
+		
+		<script type="text/javascript">
+			// 写代码
+		</script>
+		
+	</body>
+</html>

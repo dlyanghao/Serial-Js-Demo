@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+		<script type="text/javascript">
+			
+			$(function(){
+				
+				//var rex = new RegExp("[0-9]","");
+				var rex = /[\D]/;
+				var v = rex.test("4243243243");
+				//相当于find()---匹配子串
+				//test() 方法用于检测一个字符串是否匹配某个模式，如果字符串中含有匹配的文本，则返回 true，否则返回 false。
+				alert(v);
+			});
+			
+			
+			
+		</script>
+	</head>
+	<body>
+		<h1>表单校验--扩展:用户名</h1>
+		<h4>要求：用户名至少包含数字，小写字母，大写字母其中的2种。</h4>
+		
+		<form id="formid" action="#">
+			
+			用户名：<input type="text" id="test" name="username"/>
+			<span id="un_msg"></span> <br />
+			
+			<input type="submit" value="提交"/>
+			
+		</form>		
+	</body>
+</html>

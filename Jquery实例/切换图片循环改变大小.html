@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+		<script type="text/javascript">
+			
+			$(function(){
+				
+				//点击更换图片
+				var oldSrc = $("#img_id").prop("src");
+				$("#bt1").click(function(){
+					if(oldSrc!="img/star.jpg")
+					{
+						$("#img_id").prop("src","img/star.jpg");
+						oldSrc = "img/star.jpg";
+					}
+					else
+					{
+						$("#img_id").prop("src","img/car.jpg");
+						oldSrc = "img/car.jpg";
+					}
+				});
+				
+				//点击更改图片大小
+				$("#bt2").click(function(){
+					var $image = $("#img_id");
+					var width = $image.prop("width");
+					var height = $image.prop("height");
+					
+					width = parseInt(width)+10+"";
+					height = parseInt(height)+10+"";
+
+					$image.prop("width",width);
+					$image.prop("height",height);
+				});
+				
+				//点击更改图片大小
+				$("#bt3").click(function(){
+					var $image = $("#img_id");
+					var width = $image.prop("width");
+					var height = $image.prop("height");
+					
+					width = parseInt(width)-10+"";
+					height = parseInt(height)-10+"";
+
+					$image.prop("width",width);
+					$image.prop("height",height);
+				});
+				
+				//循环自动变大变小
+				var flag=true;
+				var interval;
+				$("#bt4").click(function(){
+					
+					if(interval==null)
+					 interval = setInterval(function(){
+					 	
+						
+						var $image = $("#img_id");
+						var width = $image.prop("width");
+						var height = $image.prop("height");
+				
+						if(flag)
+						{
+							width = parseInt(width)+10+"";
+							height = parseInt(height)+10+"";
+							
+							$image.prop("width",width);
+							$image.prop("height",height);
+							if(width>=1000)
+							{
+								flag=false;
+							}
+						}
+						else
+						{
+							
+							width = parseInt(width)-10+"";
+							height = parseInt(height)-10+"";
+							
+							$image.prop("width",width);
+							$image.prop("height",height);
+							if(height<=300)
+							{
+								flag=true;
+							}
+						}
+					},20);
+				
+				});
+				
+				
+				//停止自动变大变小
+				
+				$("#bt5").click(function(){
+					
+					//bom对象window清除计数器对象
+					window.clearInterval(interval);
+					interval=null;
+					
+				});
+				
+			});
+		</script>
+	</head>
+	<body>
+		<h3>有2张图片</h3>
+		
+		
+		<!--* 预先准备2张图片，使用jquery完成更换图片，图片变大，图片缩小等功能-->
+
+		<input type="button" id="bt1" value="更换图片" />
+		<input type="button" id="bt2" value="图片变大" />
+		<input type="button" id="bt3" value="图片缩小" />
+		<input type="button" id="bt4" value="循环自动变大变小"/>
+		<input type="button" id="bt5" value="停止自动变大变小"/>
+
+		<br/>
+		
+
+		<img  id="img_id" src="img/car.jpg" width="500px" height="300"  />	
+	</body>
+</html>

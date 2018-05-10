@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>index</title>
+		<style>
+			.moveRight{
+				
+
+			}
+		</style>
+		<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				
+				var index=0;
+				var imageArray = [
+			"img/first_slide1.jpg",
+			"img/first_slide2.jpg",
+			"img/first_slide3.jpg",
+			"img/first_slide4.jpg",
+			"img/first_slide5.jpg",
+			"img/first_slide6.jpg",
+			"img/first_slide7.jpg",
+			"img/first_slide8.jpg"];
+				
+				window.setInterval(function(){
+					$("#image").prop("src",imageArray[index++%8]);
+				},1000);
+				
+				window.setInterval(function(){
+					
+					$("#ad").toggle("slow");
+					
+				},5000);
+				
+			});
+
+		</script>
+	</head>
+	<!--
+    	作者：杨豪
+    	时间：2017-12-14
+    	描述：静态页面，表格的使用
+    -->
+	<body>
+		<table align="center" cellpadding="8px">
+			<tr>
+				<td colspan="3" >
+					<img id="ad" src="img/car.jpg"  width="300px"/>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3"><img id="image" width="1490px"></td>
+			</tr>
+		</table>
+	</body>
+</html>

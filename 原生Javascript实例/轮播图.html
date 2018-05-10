@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>入门案例</title>
+		
+		<script type="text/javascript">
+			
+			var index = 0;
+			var imageArray = [
+			"img/first_slide1.jpg",
+			"img/first_slide2.jpg",
+			"img/first_slide3.jpg",
+			"img/first_slide4.jpg",
+			"img/first_slide5.jpg",
+			"img/first_slide6.jpg",
+			"img/first_slide7.jpg",
+			"img/first_slide8.jpg"];
+			
+			window.onload = function(){
+				
+				
+				setInterval(function(){
+				var v = document.getElementById("image");
+				v.src = imageArray[index%8];
+				index++;
+				},2000);
+				
+				setInterval(function(){
+				var v = document.getElementById("image");
+				var s = new Date().getSeconds();
+				console.log(s);
+				if(s%2==0)
+				{
+					v.style.display="none";
+				}
+				else
+				{
+					v.style.display="block";
+				}
+				},200);
+				
+			}	
+		</script>		
+	</head>
+
+
+	
+	<body>
+		<h1>这是一个轮流转换图片的Demo</h1>
+	
+		<img id="image" src="img/first_slide1.jpg" align="center"/>
+		
+	</body>
+</html>

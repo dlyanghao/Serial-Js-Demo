@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>dom操作</title>
+		<script type="text/javascript">
+			
+			window.onload = function(){
+				
+				var name = document.getElementById("name");
+				var tel = document.getElementById("tel");
+				var btn = document.getElementById("bt1");
+				var trs = document.getElementsByTagName("tr");
+				var table = document.getElementById("table");
+				
+					
+				
+				btn.onclick = function(){
+					
+					var note = document.createElement("tr");
+					var length = trs.length;
+					
+					note.innerHTML = "<td>"+parseInt(length)+"</td>"+"<td>"+name.value+"</td>"+"<td>"+tel.value+"</td>";
+					table.appendChild(note);
+		
+				}
+				
+				
+				
+				
+				
+				
+			}
+			
+		</script>
+	</head>
+	<body>
+		姓名：<input type="text" id="name"> 
+		电话：<input type="text" id="tel">
+		<input type="button" value="添加" id="bt1">
+		
+		<hr />
+		<form method=""></form>
+		<table border="1px" width="400px" id="table">
+			<tr>
+				<td>序号</td>
+				<td>姓名</td>
+				<td>电话</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>黑妞</td>
+				<td>13800138000</td>
+			</tr>
+		</table>
+	</body>
+</html>
