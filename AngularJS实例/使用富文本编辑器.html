@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--
+富文本编辑器，Rich Text Editor, 简称 RTE, 它提供类似于 Microsoft Word 的编辑功能。常用的富文本编辑器：
+KindEditor    http://kindeditor.net/
+UEditor      http://ueditor.baidu.com/website/
+CKEditor     http://ckeditor.com/
+-->
+<!--这里使用KindEditor-->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<!--angular-->
+		<script type="text/javascript" src="js/angular.min.js"></script>
+		<!-- 富文本编辑器 -->
+		<link rel="stylesheet" href="kindeditor/themes/default/default.css" />
+		<script charset="utf-8" src="kindeditor/kindeditor-min.js"></script>
+		<script charset="utf-8" src="kindeditor/lang/zh_CN.js"></script>
+		
+		<script type="text/javascript">
+			/*初始化编辑器*/
+			var editor;
+			KindEditor.ready(function(K) {
+				editor = K.create('textarea[name="content"]', {
+					allowFileManager : true
+				});
+			});
+			
+			/*angular*/
+			var app = angular.module("test",[]);
+			app.controller("control",function($scope){
+				
+				$scope.getHtml = function(){
+					$scope.testValue = editor.html();
+				}
+				
+				$scope.clear = function(){
+					editor.html("");
+				}
+			});
+			
+		</script>
+
+	</head>
+	<body ng-app="test" ng-controller="control">
+		<textarea name="content"></textarea>
+		
+		<button ng-click="getHtml()">获取富文本编辑器中的html</button>-----------   当前的值：<span ng-bind="testValue"></span>
+		<button ng-click="clear()">清空编辑器中的内容</button>
+		
+	</body>
+</html>
