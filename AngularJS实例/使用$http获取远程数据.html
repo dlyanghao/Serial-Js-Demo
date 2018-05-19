@@ -6,14 +6,23 @@
 		<script src="js/angular.min.js"></script>
 	</head>
 	<script>
+		/*base 模块定义*/
 		var app = angular.module("myApp",[]);
-		app.controller("remoteControl",function($scope,$http){
-			
-			$http.get("json/data.json").success(function(response){
+		
+		/*定义服务*/
+		app.service("myService",function($http){
+			return $http.get("json/data.json");
+		})
+		/*定义控制器*/
+		app.controller("remoteControl",function($scope,$http,myService){
+			/*调用服务*/
+			myService.success(function(response){
 				$scope.persons = response;
 			});
 			
 		});
+		
+		
 		
 	</script>
 	<body>
